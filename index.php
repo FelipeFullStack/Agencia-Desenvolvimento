@@ -1,3 +1,14 @@
+
+<?php
+
+$servicos = [
+  ["imagem"=>"images/logoCriarSite.png","titulo"=>"Criar um site","descrição"=>"descrição do Serviço 1"],
+  ["imagem"=>"images/logoCriarLojaVirtual.png","titulo"=>"Criar uma loja virtual","descrição"=>"descrição do Serviço 2"],
+  ["imagem"=>"images/logoCriarBlog.png","titulo"=>"Criar um blog","descrição"=>"descrição do Serviço 3"]
+];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,36 +54,19 @@
             </section>
             <section id="servico" class="container mt-5">
                 <div class="row">
+                  <?php foreach($servicos as $servico){?>
                     <div class=" col-4">
                         <div class="card" >
-                          <img src="images/logoCriarSite.png" class="card-img-top" alt="...">
+                          <img src="<?php echo $servico ["imagem"]; ?>" class="card-img-top" alt="...">
                           <div class="card-body">
-                            <h5 class="card-title">Sites</h5>
-                            <p class="card-text">Iremos criar um Site incrivel pra vc.</p>
+                            <h5 class="card-title"><?php echo $servico ["titulo"]; ?>
+                            </h5>
+                            <p class="card-text"> <?php echo $servico ["descrição"]; ?> </p>
                             <a href="#" class="btn btn-primary">Compre Agora</a>
                           </div>
                         </div>
                     </div>
-                    <div class=" col-4">
-                      <div class="card" >
-                        <img src="images/logoCriarLojaVirtual.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Loja Virtual</h5>
-                          <p class="card-text">Iremos criar um Loja Virtual incrivel pra vc.</p>
-                          <a href="#" class="btn btn-primary">Compre Agora</a>
-                        </div>
-                      </div>
-                        </div>
-                    <div class=" col-4">
-                      <div class="card" >
-                        <img src="images/logoCriarBlog.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Blog</h5>
-                          <p class="card-text">Iremos criar um Blog incrivel pra vc.</p>
-                          <a href="#" class="btn btn-primary">Compre Agora</a>
-                        </div>
-                      </div>
-                     </div>
+                  <?php } ?>
                 </div>
             </section>
               <section id= "Sobre" class="container mt-5">
